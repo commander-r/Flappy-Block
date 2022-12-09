@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webgame | HTML JS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <script src="js/shooter.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
+    <!-- load in the showTop3Players(); function when the page loads in -->
+    <script>
+        window.onload = showTop3Players();
+    </script>
+</head>
+<body>
+
+    <div class="notAvailableOnPhone">
+        <h1>Not available on phone</h1>
+        <p>Sorry, this game is not available on phone. Please play on a computer.</p>
+    </div>
+
+    <h1 class="title">Shooter!</h1>
+
+    <table id="top3players">
+        <tr>
+            <th>Player</th>
+            <th>Score</th>
+        </tr>
+    </table>
+
+
+    <div id="game">
+        <div id="score">
+            <p>Score: <span id="scoreValue">0</span></p>
+        </div>
+        <div id="lives">
+            <p>Lives: <span id="livesValue">3</span></p>
+        </div>
+
+        <div class="playfield"></div>
+    </div>
+
+    
+    <button id="test" onclick="scoreUpdate()">+1 score</button>
+    <button id="test" onclick="gameOver()">GameOver</button>
+    <button id="test" onclick="damage()">-1 live</button>
+    <button id="test" onclick="saveScore()">SaveScore</button>
+    <button id="test" onclick="showTop3Players()">Scoreboard</button>
+</body>
+</html>
