@@ -1,0 +1,49 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 0, 0, 0.5));
+    font-family: "Zen Dots";
+}
+
+.title {
+    font-family: Handlee;
+    text-align: center;
+}
+
+#game {
+    background-color:rgba(0, 0, 0, 0.5);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 800px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#game:hover {
+    cursor: url("/img/cursor.cur") 5 5, crosshair;
+}
+
+table {
+    border-spacing: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.notAvailableOnPhone {
+    display: none;
+    text-align: center;
+    font-size: 2rem;
+    font-family: Handlee;
+}
+
+@media screen and (max-width: 850px) {
+    #game, table, .title, button {
+        display: none;
+    }
+    .notAvailableOnPhone {
+        display: block;
+    }
+}
