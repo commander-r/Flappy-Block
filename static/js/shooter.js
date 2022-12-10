@@ -1,16 +1,13 @@
 // an endless shooter game in a browser
 
 // global variables
-var canvas;
-var ctx;
 var player;
-var enemies = [];
-var bullets = [];
 var score = 0;
 var lives = 3;
 var level = 1;
 var levelUp = 0;
 var levelUpScore = 100;
+var playfield = document.getElementsByClassName("playfield");
 
 // game loop
 function gameLoop() {
@@ -25,43 +22,12 @@ function gameLoop() {
     update();
 }
 
-gameLoop();
-
-// spawn enemy
-function spawnEnemy() {
-    // if (enemies.length < 5) {
-        var enemy = document.createElement("div");
-        enemy.className = "enemy";
-        enemy.style.backgroundColor = "green";
-
-        // add the enemy to the playfield
-        document.getElementById("playfield").appendChild(enemy);
-
-        enemies.push(enemy);
-
-        alert("A new enemy has spawned!")
-    // }
-}
-
 // update game
 function update() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    player.update();
-    for (var i = 0; i < enemies.length; i++) {
-        enemies[i].update();
-    }
-    for (var i = 0; i < bullets.length; i++) {
-        bullets[i].update();
-    }
     drawScore();
     drawLives();
     drawLevel();
-    requestAnimationFrame(gameLoop);
-}
-
-function scoreUpdate() {
-    score++;
-    drawScore();
+    showTop3Players();
 }
 
 // draw score
@@ -78,10 +44,22 @@ function drawLives() {
     document.getElementById("livesValue").innerHTML = lives;
 }
 
+// +1 score
+function scoreUpdate() {
+    score++
+    drawScore();
+}
+
+// +1 life
+function livesUpdate() {
+    lives++
+    drawScore();
+}
+
 // make the player ask for a username and use that username to save the score in the local storage
 function saveScore() {
     var username = prompt("Please enter your username to save your scores to our database:");
-    if (username != null || username != "") {
+    if (username !== null || username !== "") {
         var scoreData = {
             "username": username,
             "score": score
@@ -174,3 +152,4 @@ function showTop3Players() {
     xhttp.open("GET", "/top3players", true);
     xhttp.send();
 }
+

@@ -8,13 +8,12 @@ app.use(express.static('static'));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.render(__dirname + '/pages/index.ejs');
+    res.sendFile(__dirname + '/pages/index.html');
 });
 
 app.post("/scores", (req, res) => {
     // get the data from the request
     var FetchedData = req.body;
-    console.log(FetchedData);
     // read the scores.json file
     fs.readFile(__dirname + '/scores.json', 'utf8', (err, data) => {
         if(err) {
@@ -22,11 +21,13 @@ app.post("/scores", (req, res) => {
         }
         else {
             // read the scores.json file// write the new data to data.json
-    let jsonData = fs.readFileSync('scores.json');
-    let dataRecord = JSON.parse(jsonData);
+            let jsonData = fs.readFileSync('scores.json');
+            let dataRecord = JSON.parse(jsonData);
             
             const username = FetchedData.username;
             const score = FetchedData.score;
+
+            if(username === "" || username === null) return;
 
             if(dataRecord.data.length >= 10) {
                 // sort the scores
