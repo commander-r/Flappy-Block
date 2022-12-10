@@ -152,4 +152,3 @@ function showTop3Players() {
     xhttp.open("GET", "/top3players", true);
     xhttp.send();
 }
-

@@ -20,16 +20,42 @@ body {
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-}
-
-#game:hover {
-    cursor: url("/img/cursor.cur") 5 5, crosshair;
+    cursor: default;
 }
 
 table {
     border-spacing: 2rem;
     margin-left: auto;
     margin-right: auto;
+}
+
+#player {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 145px;
+    border-radius: 50px;
+    z-index: 1;
+}
+
+.playfield {
+    position: absolute;
+    bottom: 2%;
+    width: 97%;
+    height: 85%;
+    background-color: rgba(20, 101, 148, 0.5);
+    border-radius: 10px;
+    border: 1px solid rgb(17, 88, 129);
+}
+
+.playfield {
+    cursor: url("/img/cursor.cur") 5 5, crosshair;
+}
+
+#score, #lives {
+    display: inline-block;
+    margin: 0 10px;
 }
 
 .notAvailableOnPhone {

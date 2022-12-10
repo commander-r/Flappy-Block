@@ -62,8 +62,6 @@ app.get('/top3players', async (req, res) => {
             let top3 = dataRecord.data.slice(0, 3);
             // send the top3 array to the client
             res.send(top3);
-            // console log the username
-            console.log(top3);
         }
     });
 

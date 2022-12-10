@@ -12,8 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-
-    <!-- load in the showTop3Players(); function when the page loads in -->
     <script>
         window.onload = showTop3Players();
     </script>
@@ -34,7 +32,6 @@
         </tr>
     </table>
 
-
     <div id="game">
         <div id="score">
             <p>Score: <span id="scoreValue">0</span></p>
@@ -43,7 +40,9 @@
             <p>Lives: <span id="livesValue">3</span></p>
         </div>
 
-        <div class="playfield"></div>
+        <div class="playfield">
+            <img src="/img/player.png" id="player"></img>
+        </div>
     </div>
 
     
