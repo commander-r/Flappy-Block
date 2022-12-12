@@ -1,7 +1,6 @@
 // an endless shooter game in a browser
 
 // global variables
-var player;
 var score = 0;
 var lives = 3;
 var level = 1;
@@ -152,3 +151,12 @@ function showTop3Players() {
     xhttp.open("GET", "/top3players", true);
     xhttp.send();
 }
+
+// canvas.addEventListener("mousedown", onDown, false);
+
+// function onDown(event) {
+//     var clickx = event.pageX;
+//     var clicky = event.pageY;
+
+//     console.log(clickx + " " + clicky);
+// }

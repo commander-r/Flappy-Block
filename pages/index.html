@@ -23,7 +23,7 @@
         <p>Sorry, this game is not available on phone. Please play on a computer.</p>
     </div>
 
-    <h1 class="title">Shooter!</h1>
+    <h1 class="title">Mortal Nightmare</h1>
 
     <table id="top3players">
         <tr>
@@ -39,10 +39,17 @@
         <div id="lives">
             <p>Lives: <span id="livesValue">3</span></p>
         </div>
+        <br>
 
-        <div class="playfield">
-            <img src="/img/player.png" id="player"></img>
-        </div>
+        <canvas id="myCanvas" width="800" height="550" style="border:2px solid rgba(81, 166, 228, 0.594); border-radius: 10px; background-color:rgba(29, 103, 155, 0.689)">
+            Your browser does not support the canvas element.
+        </canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = "lime";
+            ctx.fillRect(380,255,40,40);
+        </script>
     </div>
 
     
