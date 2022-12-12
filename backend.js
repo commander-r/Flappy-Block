@@ -26,6 +26,7 @@ app.post("/scores", (req, res) => {
             
             const username = FetchedData.username;
             const score = FetchedData.score;
+            const lives = FetchedData.lives;
 
             if(username === "" || username === null) return;
 
