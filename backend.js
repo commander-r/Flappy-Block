@@ -8,7 +8,7 @@ app.use(express.static('static'));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/pages/index.html');
+    res.sendFile(__dirname + '/pages/game.html');
 });
 
 app.post("/scores", (req, res) => {

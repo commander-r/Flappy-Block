@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webgame | HTML JS</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
 
     <script src="/js/game.js"></script>
@@ -16,11 +16,19 @@
 
     <style>
         canvas {
-            background-color: rgba(121, 32, 204, 0.74);
-            border: 2px solid rgba(88, 15, 138, 0.863);
+            background-color: rgba(0, 0, 0, 0.74);
+            border: 2px solid rgba(121, 5, 199, 0.863);
+            box-shadow: 0 0 10px rgba(121, 5, 199, 0.863);
             border-radius: 10px;
         }
     </style>
+
+    <meta property="og:title" content="Mauro's Personal Website's game" />
+    <meta property="og:description" content="A JavaScript game for on my personal website" />
+    <meta property="og:image" content="/images/mainIcon.png" />
+    <meta property="og:url" content="https://maurowalker.dev/game" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#460b77">
 </head>
 <body onload="startGame(`game`), showTop3Players()">
     <div class="notAvailableOnPhone">
@@ -36,6 +44,8 @@
             <th>Score</th>
         </tr>
     </table>
+
+    <button onclick="startGame2()" id="playagain" style="display: none">play again</button>
     
     <div id="game">
         <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button>

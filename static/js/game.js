@@ -4,7 +4,7 @@ var lives = 3;
 var score;
 
 function startGame() {
-    myGamePiece = new component(30, 30, "yellow", 10, 120);
+    myGamePiece = new component(30, 30, "lime", 10, 120);
     myGameArea.start();
 }
 
@@ -125,11 +125,11 @@ function everyinterval(n) {
 }
 
 function moveup() {
-    myGamePiece.speedY = -2; 
+    myGamePiece.speedY = -2;
 }
 
 function movedown() {
-    myGamePiece.speedY = 2; 
+    myGamePiece.speedY = 2;
 }
 
 function clearmove() {
@@ -216,11 +216,41 @@ function playAgain() {
         score = 0;
         myObstacles = [];
         myGameArea.frameNo = 0;
+        showTop3Players();
         myGameArea.start();
     }
     else {
         alert("Thank you for playing!\nIf you want to give feedback, please send an email to: dis.commander.r@gmail.com");
         lives = 3;
         score = 0;
+        myGameArea.stop();
+        showTop3Players();
+        document.getElementById("playagain").style.display = "block";
     }
+}
+
+function startGame2() {
+    document.getElementById("playagain").style.display = "none";
+    lives = 3;
+    score = 0;
+    myObstacles = [];
+    myGameArea.frameNo = 0;
+    myGamePiece = new component(30, 30, "yellow", 10, 120);
+    myGameArea.start();
+}
+
+// let the player move the bird with the W and S  keys
+document.onkeydown = function (e) {
+    switch (e.keyCode) {
+        case 87:
+            moveup();
+            break;
+        case 83:
+            movedown();
+            break;
+    }
+}
+
+document.onkeyup = function (e) {
+    clearmove();
 }
