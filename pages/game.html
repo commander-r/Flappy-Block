@@ -1,11 +1,12 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webgame | HTML JS</title>
+    <title>Flappy Block</title>
     <link rel="stylesheet" href="css/game.css">
-    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/flappy-block.png" type="image/x-icon">
 
     <script src="/js/game.js"></script>
 
@@ -25,8 +26,8 @@
 
     <meta property="og:title" content="Mauro's Personal Website's game" />
     <meta property="og:description" content="A JavaScript game for on my personal website" />
-    <meta property="og:image" content="/images/mainIcon.png" />
-    <meta property="og:url" content="https://maurowalker.dev/game" />
+    <meta property="og:image" content="/img/flappy-block.png" />
+    <meta property="og:url" content="https://maurowalker.dev/flappy-block" />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#460b77">
 </head>
@@ -42,19 +43,39 @@
         <tr>
             <th>Player</th>
             <th>Score</th>
+            <th>level</th>
         </tr>
     </table>
 
-    <button onclick="startGame2()" id="playagain" style="display: none">play again</button>
-    
-    <div id="game">
-        <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button>
-        <button onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()">DOWN</button>
+    <button onclick="restartGame()" id="playagain" style="display: none;">Play again</button>
+
+    <div id="pauseMenu" style="display: none">
+        <h1>Paused</h1>
+        <button onclick="restartGame()">Restart</button>
+        <button onclick="quitGame()">Quit</button>
+        <button onclick="controls()">controls</button>
+        <br>
+        <div id="level">
+            <p>Level: <span class="levelValue">1</span></p>
+        </div>
         <div id="lives">
-            <p>Lives: <span id="livesValue">3</span></p>
+            <p>Lives: <span class="livesValue">3</span></p>
         </div>
         <div id="score">
-            <p>Score: <span id="scoreValue">0</span></p>
+            <p>Score: <span class="scoreValue">0</span></p>
+        </div>
+    </div>
+    
+    <div id="game">
+        <button onclick="controls()">controls</button>
+        <div id="level">
+            <p>Level: <span class="levelValue">1</span></p>
+        </div>
+        <div id="lives">
+            <p>Lives: <span class="livesValue">3</span></p>
+        </div>
+        <div id="score">
+            <p>Score: <span class="scoreValue">0</span></p>
         </div>
     </div>
 </body>

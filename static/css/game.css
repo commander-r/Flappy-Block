@@ -33,36 +33,69 @@ table {
     margin-right: auto;
 }
 
-#player {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    z-index: 1;
-    background-color: greenyellow;
-}
-
-#score, #lives {
+#score, #lives, #level {
     display: inline-block;
     margin: 0 10px;
 }
 
-/* make the #map in the bottom of the .game div */
-#map {
+/* show the pause menu on top of the canvas */
+#pauseMenu {
     position: absolute;
-    bottom: 4px;
-    left: 6px;
-    right: 4px;
-    width: 98%;
-    height: 90%;
-    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+#pauseMenu {
+    color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.733);
+    
+    /* disable scrolling */
+    overflow: hidden;
+}
+
+#pauseMenu button {
+    margin: 10px;
+}
+
+#pauseMenu button:hover {
+    background-color: rgb(136, 255, 0);
+}
+
+#pauseMenu button:active {
+    background-color: rgb(255, 0, 0);
+}
+
+#pauseMenu > button {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
     border-radius: 10px;
-    border-color: blue;
-    border-style: solid;
-    border-width: 1px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#pauseMenu > button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#pauseMenu > button:active {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .notAvailableOnPhone {
