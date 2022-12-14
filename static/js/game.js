@@ -134,7 +134,6 @@ function updateGameArea() {
             }
             myObstacles.splice(i, 1);
             drawLives();
-            showTop3Players();
             return;
         } 
     }
@@ -158,6 +157,7 @@ function updateGameArea() {
     score = myGameArea.frameNo / 10;
     drawScore();
     levelUp();
+    showTop3Players();
     myGamePiece.newPos();    
     myGamePiece.update();
 }
@@ -272,12 +272,7 @@ function playAgain() {
     drawScore();
     let playagain = prompt("Do you want to play again? (yes/no)");
     if (playagain == "yes") {
-        lives = 3;
-        score = 0;
-        myObstacles = [];
-        myGameArea.frameNo = 0;
-        showTop3Players();
-        myGameArea.start();
+        restartGame();
     }
     else {
         alert("Thank you for playing!\nIf you want to give feedback, please send an email to: dis.commander.r@gmail.com");
